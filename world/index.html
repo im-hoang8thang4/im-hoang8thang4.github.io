@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <section>
+        <div class="bannerVideo" id = "slideShow">
+            <video src="./assets/vietnam.mp4" autoplay muted loop class = "active"></video>
+            <video src="./assets/por.mp4" autoplay muted loop></video>
+            <video src="./assets/tokyo.mp4" autoplay muted loop></video>
+            <video src="./assets/paris.mp4" autoplay muted loop></video>
+        </div>
+        <div class = "container">
+            <header id = "navbar">
+                <a href="" class = "logo">Word</a>
+                <ul>
+                    <li> <a href="" class = "active">Home</a> </li>
+                    <li><a href="">Destination</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </header>  
+            <div class="content">
+                <div class="bannerContent" id="slideShowContent">
+                    <div class="active">
+                        <h2>Viet Nam</h2>
+                        <p>Disclaimer video is for educational purpose only. Copyright Disclaimer Under Section 107 of the Copyright Act 1976, allowance is made for "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use
+                        </p>
+                    </div>
+                    <div>
+                        <h2>Portugal</h2>
+                        <p>Disclaimer video is for educational purpose only. Copyright Disclaimer Under Section 107 of the Copyright Act 1976, allowance is made for "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use
+                        </p>
+                    </div>
+                    <div>
+                        <h2>Tokyo</h2>
+                        <p>Disclaimer video is for educational purpose only. Copyright Disclaimer Under Section 107 of the Copyright Act 1976, allowance is made for "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use
+                        </p>
+                    </div>
+                    <div>
+                        <h2>Paris</h2>
+                        <p>Disclaimer video is for educational purpose only. Copyright Disclaimer Under Section 107 of the Copyright Act 1976, allowance is made for "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use
+                        </p>
+                    </div>
+                </div>
+            </div>
+             <ul class= "sci">
+                 <li><a href=""><img src="./assets/facebook.png" alt=""></a></li>
+                 <li><a href=""><img src="./assets/instagram.png" alt=""></a></li>
+                 <li><a href=""><img src="./assets/twitter.png" alt=""></a></li>
+             </ul>
+             <ul class="control">
+                 <li onclick="prevSlide();prevSlideContent()"><img src="./assets/left.png" alt=""></li>
+                 <li onclick="nextSlide();nextSlideContent()"><img src="./assets/right.png" alt=""></li>
+             </ul>
+        </div>
+    </section>
+    <script>
+        const slideShow = document.getElementById("slideShow");
+        const slide = slideShow.getElementsByTagName("video");
+        var index = 0;
+        function nextSlide(){
+            slide[index].classList.remove("active")
+            index = (index + 1) % slide.length;
+            slide[index].classList.add("active")
+        }
+        function prevSlide(){
+            slide[index].classList.remove("active")
+            index = (index - 1 + slide.length) % slide.length;
+            slide[index].classList.add("active")
+        }
+
+        const slideShowContent = document.getElementById("slideShowContent");
+        const slideContent = slideShowContent.getElementsByTagName("div");
+        var i = 0;
+        function nextSlideContent(){
+            slideContent[i].classList.remove("active")
+            i= (i + 1) % slideContent.length;
+            slideContent[index].classList.add("active")
+        }
+        function prevSlideContent(){
+            slideContent[i].classList.remove("active")
+            i = (i - 1 + slideContent.length) % slideContent.length;
+            slideContent[i].classList.add("active")
+        }
+    </script>
+</body>
+</html>
